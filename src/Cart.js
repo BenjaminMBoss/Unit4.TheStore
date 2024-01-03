@@ -19,9 +19,12 @@ const Cart = ({ updateOrder, removeFromCart, lineItems, cart, products })=> {
         }
       </ul>
       {
-        lineItems.filter((lineItem) => {return lineItem.order_id === cart.id }).length ? <button onClick={()=> {
+        lineItems.filter((lineItem) => {return lineItem.order_id === cart.id }).length ? 
+          <button onClick={()=> {
           updateOrder({...cart, is_cart: false });
-        }}>Create Order</button>: null
+        }}>Create Order</button>
+        : 
+        <div> Add some items to your cart.</div>
       }
     </div>
   );
